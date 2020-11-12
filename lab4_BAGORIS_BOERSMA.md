@@ -2,6 +2,12 @@
 
 # Lab4 - Remarkable trees of Paris
 
+### <span style="color: #DC143C"> Link to our GitHub repository  
+
+https://github.com/easartem/MapReduce_Lab2.git
+
+***
+
 In order to run a mapReduce job, we need an input which is "trees.csv" 
 and an output to store the result. The class in charge of the junction 
 between path, mapper, reducer, combiner, i/o type, configuration is the 
@@ -169,31 +175,52 @@ This MapReduce job calculates the height of the tallest tree for each specie. Th
 *Output*
 
     -sh-4.2$ hdfs dfs -cat lab4job4/*
-    Araucariaceae   9.0
-    Betulaceae      20.0
-    Bignoniaceae    15.0
-    Cannabaceae     16.0
-    Cornaceae       12.0
-    Cupressaceae    20.0
-    Ebenaceae       14.0
-    Eucomiaceae     12.0
-    Fabaceae        11.0
-    Fagaceae        31.0
-    Ginkgoaceae     33.0
-    Juglandaceae    30.0
-    Magnoliaceae    35.0
-    Malvaceae       20.0
-    Moraceae        13.0
-    Oleaceae        30.0
-    Paulowniaceae   20.0
-    Pinaceae        30.0
-    Platanaceae     45.0
-    Sapindacaees    12.0
-    Sapindaceae     30.0
-    Simaroubaceae   35.0
-    Taxaceae        13.0
-    Taxodiaceae     35.0
-    Ulmaceae        30.0
+
+    raucana        9.0
+    atlantica       25.0
+    australis       16.0
+    baccata 13.0
+    bignonioides    15.0
+    biloba  33.0
+    bungeana        10.0
+    cappadocicum    16.0
+    carpinifolia    30.0
+    colurna 20.0
+    coulteri        14.0
+    decurrens       20.0
+    dioicus 10.0
+    distichum       35.0
+    excelsior       30.0
+    fraxinifolia    27.0
+    giganteum       35.0
+    giraldii        35.0
+    glutinosa       16.0
+    grandiflora     12.0
+    hippocastanum   30.0
+    ilex    15.0
+    involucrata     12.0
+    japonicum       10.0
+    kaki    14.0
+    libanii 30.0
+    monspessulanum  12.0
+    nigra   30.0
+    nigra laricio   30.0
+    opalus  15.0
+    orientalis      34.0
+    papyrifera      12.0
+    petraea 31.0
+    pomifera        13.0
+    pseudoacacia    11.0
+    sempervirens    30.0
+    serrata 18.0
+    stenoptera      30.0
+    suber   10.0
+    sylvatica       30.0
+    tomentosa       20.0
+    tulipifera      35.0
+    ulmoides        12.0
+    virginiana      14.0
+    x acerifolia    45.0
 
 ## <span style="color: #5d9af0"> 5. Sort the trees height from smallest to largest (average)
 
@@ -241,7 +268,7 @@ This MapReduce job displays the district where the oldest tree is. This one was 
 This MapReduce job displays the district that contains the most trees. The difficulty of this one was to understand how we could run two successive mapReduce. As for the rest, we just had to reuse what we saw precedently. 
 
 So, the main challenge was to correctly link the i/o files of our two steps. We put two jobs side to side into our Job7 class. And we channeled our job this way : </br>
-trees.csv -> Job1 -> outputJob1 -> Job2 -> outputJob2 <\br>
+trees.csv -> Job1 -> outputJob1 -> Job2 -> outputJob2 </br>
 
 Then, we reused the first mapReduce "Districts containing trees" in the first phase in order to output a list of pairs (district, number). 
 We correctly connected the output types into the job. 
